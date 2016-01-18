@@ -67,8 +67,8 @@ for my $community (@{$cfg->{mysects}}) {
         # running through filters
         for my $filter (@filters) {
 
-            # if nodes name matches filterstring
-            if ( $json->{nodes}->{$node}->{nodeinfo}->{hostname} =~ /^$filter/i ) {
+            # if nodes site code matches filterstring
+            if ( $json->{nodes}->{$node}->{nodeinfo}->{system}->{site_code} =~ /^$filter/i ) {
                 # store node to target var
                 $filtered_nodes -> {$json->{nodes}->{$node}->{nodeinfo}->{node_id}} = $json->{nodes}->{$node};
 
